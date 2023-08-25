@@ -27,7 +27,7 @@ const Donation = () => {
 
 
   return (
-    <div className="shadow-lg p-5 m-5 md:mr-5 mx-auto mt-8 rounded-lg">
+    <div className="shadow-2xl p-5 m-5 md:mr-5 mx-auto mt-8 rounded-lg">
       <form onSubmit={handleSubmit}>
         <h1 className="text-green-600 font-semibold text-xl">Donation</h1>
         <TextField

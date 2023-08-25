@@ -3,7 +3,7 @@ import React from 'react'
 const Banner = () => {
   return (
    <>
-   <section className="bg-white dark:bg-gray-900">
+   <section className="bg-white dark:bg-gray-900 mt-[350px] md:mt-[-60px]">
     <div className="container px-6 py-10 mx-auto">
         <h1 className="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore our <br/> awesome <span className="underline decoration-blue-500">Services</span></h1>
         

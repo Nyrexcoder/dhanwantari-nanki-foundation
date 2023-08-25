@@ -79,10 +79,10 @@ export default function Nav() {
   };
 
   return (
-    <header className="bg-[#40572a]">
+    <header className="bg-[#40572a] sticky top-0 z-10">
       {open && <RegistrationModal status={open} funcClose={func} />}
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
