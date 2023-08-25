@@ -1,5 +1,5 @@
-'use client';
-import { Fragment, useState } from "react";
+"use client";
+import { Fragment, useEffect, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import {
   ArrowPathIcon,
@@ -43,6 +43,22 @@ const callsToAction = [
   { name: "Contact sales", href: "#", icon: PhoneIcon },
 ];
 
+
+const navLinks = [
+  {
+    name: "Home",
+    Link: "/",
+  },
+  {
+    name: "Register",
+    Link: "/register",
+  },
+  {
+    name: "Donate",
+    Link: "/donate",
+  },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -51,6 +67,8 @@ export default function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const [open, setOpen] = useState(false);
+
+
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -62,19 +80,17 @@ export default function Nav() {
 
   return (
     <header className="bg-[#40572a]">
-      {
-        open && <RegistrationModal status={open} funcClose={func} />
-      }
+      {open && <RegistrationModal status={open} funcClose={func} />}
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href={'/'} className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img className="h-8 w-auto" src="ngo-logo.jpg" alt="" />
             {/* <span className='text-white font-semibold'>Dhanwantari Nanki Foundation</span> */}
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -87,19 +103,16 @@ export default function Nav() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <a href="/" className="text-sm font-semibold leading-6 text-white">
-            Home
-          </a>
-          <Link
-            href={'register'}
-            className="text-sm font-semibold leading-6 text-white"
-            // onClick={handleClickOpen}
-          >
-            Register
-          </Link>
-          <a href="#" className="text-sm font-semibold leading-6 text-white">
-            Donate
-          </a>
+          {navLinks.map((value) => (
+            <Link
+              href={value.Link}
+              className="text-sm font-semibold leading-6 text-white"
+              // onClick={handleClickOpen}
+              key={value.Link}
+            >
+              {value.name}
+            </Link>
+          ))}
           <Popover className="relative">
             <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-white">
               Services
@@ -171,53 +184,44 @@ export default function Nav() {
       </nav>
       <Dialog
         as="div"
-        className="lg:hidden"
+        className="lg:hidden transition ease-out duration-500"
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-10" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-green-500 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-[#40572a] px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href={"/"} className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <span className="text-white font-semibold">
-                Dhanwantari Nanki Foundation
-              </span>
-            </a>
+              <img className="h-8 w-auto" src="ngo-logo.jpg" alt="" />
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+              <XMarkIcon className="h-6 w-6 text-white" aria-hidden="true" />
             </button>
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Home
-                </a>
-                <Link
-                  href={'register'}
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Register
-                </Link>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Donate
-                </a>
+                {navLinks.map((value) => (
+                  <Link
+                    href={value.Link}
+                    onClick={()=>setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-[#40572a]"
+                    // onClick={handleClickOpen}
+                    key={value.Link}
+                  >
+                    {value.name}
+                  </Link>
+                ))}
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-white hover:bg-gray-50 hover:text-[#40572a]">
                         Services
                         <ChevronDownIcon
                           className={classNames(
@@ -233,7 +237,7 @@ export default function Nav() {
                             key={item.name}
                             as="a"
                             href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-green-900 hover:bg-green-50"
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-white hover:bg-green-50 hover:text-[#40572a]"
                           >
                             {item.name}
                           </Disclosure.Button>
@@ -244,12 +248,12 @@ export default function Nav() {
                 </Disclosure>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                <Link
+                  href={'/login'}
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-white hover:text-[#40572a]"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </div>
           </div>
