@@ -6,8 +6,8 @@ import BasicSpeedDial from "./components/sideTouch/BasicSpeedDial";
 import { CssBaseline } from '@mui/material';
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Savita Paint | BETA-V1.0.0",
-  description: "savita paint",
+  title: "DHANVANTRI NANKI FOUNDATION | BETA-V1.0.0",
+  description: "DHANVANTRI NANKI FOUNDATION",
 };
 
 export default function RootLayout({
