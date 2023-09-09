@@ -10,7 +10,7 @@ import {
 } from "react-icons/hi";
 const HeroSlider = () => {
   return (
-    <div>
+    <>
       <Swiper
         className="mySwiper relative group"
         spaceBetween={50}
@@ -45,7 +45,7 @@ const HeroSlider = () => {
         </div>
        
       </Swiper>
-    </div>
+    </>
   );
 };
 
