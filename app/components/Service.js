@@ -1,6 +1,6 @@
 'use client';
 import React from 'react'
-import ServiceCard from '../../card/ServiceCard';
+import ServiceCard from './ServiceCard';
 const Service = () => {
     const services = [
         {
