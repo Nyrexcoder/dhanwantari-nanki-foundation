@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import ServiceCard from '../../card/ServiceCard';
 const Service = () => {
