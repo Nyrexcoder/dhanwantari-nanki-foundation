@@ -12,12 +12,12 @@ const nav = [
     link: "/about",
   },
   {
-    label: "Appointments",
-    link: "/resin-division",
+    label: "Appointment",
+    link: "/appointment",
   },
   {
     label: "Donate",
-    link: "/career",
+    link: "/donate",
   },
   {
     label: "Contact",
