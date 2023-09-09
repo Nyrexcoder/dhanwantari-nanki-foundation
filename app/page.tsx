@@ -1,4 +1,3 @@
-'use client';
 import HeroSlider from './components/home/slider/HeroSlider';
 import HomeTab from './components/home/tab/HomeTab';
 import GetTouch from './components/home/GetTouch';
