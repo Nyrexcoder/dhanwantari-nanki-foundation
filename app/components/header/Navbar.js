@@ -86,7 +86,7 @@ const NavbarScroll = ({ isScrolling, toggleMenu, isMobileNav }) => {
           <p className="text-sm text-yellow-500 absolute left-[15%]">FOUNDATION</p>
         </div>
         <div className="p-2 md:hidden block">
-        <h1 className="font-bold text-xl text-[#dc3545] text-center">SAVITA PAINT</h1>
+        <h1 className="font-bold text-sm text-green-800 text-center">DHANVANTRI NANKI FOUNDATION</h1>
         </div>
         <div className="text-4xl">
           <GrMenu onClick={() => toggleMenu(true)} className="md:hidden block mr-5" />
@@ -121,7 +121,7 @@ const NavbarFixed = ({toggleMenu, isMobileNav}) => {
           <p className="text-sm absolute left-[15%]">FOUNDATION</p>
         </div>
         <div className="p-2 md:hidden block">
-        <h1 className="font-bold text-xl text-[#dc3545] text-center">SAVITA PAINT</h1>
+        <h1 className="font-bold text-sm text-green-800 text-center">DHANVANTRI NANKI FOUNDATION</h1>
         </div>
         <div className="text-4xl">
         <GrMenu onClick={() => toggleMenu(true)} className="md:hidden block mr-5" />
