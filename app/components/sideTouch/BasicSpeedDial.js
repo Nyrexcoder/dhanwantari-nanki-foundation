@@ -1,3 +1,4 @@
+'use client';
 import React, { useState } from 'react';
 import { SpeedDial, SpeedDialIcon, SpeedDialAction } from '@mui/material';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
