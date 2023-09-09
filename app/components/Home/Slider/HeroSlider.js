@@ -1,9 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { Autoplay,Navigation } from 'swiper/modules';
 import 'swiper/css/navigation';
-
 import {
   HiOutlineArrowNarrowRight,
   HiOutlineArrowNarrowLeft,
@@ -27,13 +25,13 @@ const HeroSlider = () => {
         modules={[Autoplay,Navigation]}
       >
         <SwiperSlide>
-          <img src="slider1.jpg" width={"100%"} />
+          <img src="slider1.jpg" width={"100%"} alt="slider1" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="slider2.jpg" width={"100%"} />
+          <img src="slider2.jpg" width={"100%"} alt="slider2" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="slider3.jpg" width={"100%"} />
+          <img src="slider3.jpg" width={"100%"} alt="slider3" />
         </SwiperSlide>
 
         <div className="top-[50%] absolute z-10 button-prev-slide group-hover:right-0 -right-[23rem] duration-500 text-white w-[40px] h-[40px] bg-[#000] grid place-items-center">
